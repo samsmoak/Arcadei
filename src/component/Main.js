@@ -1,7 +1,6 @@
 import React from "react";
-import { useRef } from "react";
-import { useEffect, useState } from "react";
-import { Navbar, Carousel } from "react-bootstrap";
+import { useState } from "react";
+import { Carousel } from "react-bootstrap";
 
 import Factory from "../componentsvg/factory";
 import Gundraw from "../componentsvg/gundraw";
@@ -164,7 +163,7 @@ function Main({ isVisible }) {
 								views for each state in your application, and React will
 								efficiently update and render just the right components when
 								your data changes. Declarative views make your code more
-								predictable and easier to debug.
+								predictable and easier .
 							</p>
 						</div>
 						<div className='bg-white flex flex-col   px-7  place-self-center    transform duration-300 hover:shadow-2xl '>

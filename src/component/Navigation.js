@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 // import { InView } from "react-intersection-observer";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 
 function Navigation() {
 	const [navbar, setnavbar] = useState(false);
@@ -103,7 +104,7 @@ function Navigation() {
 										className='hover:bg-gray-300 '
 										style={{ textDecoration: "none" }}
 									>
-										undergraduates
+										undergraduat
 									</Link>
 									<Link
 										to=''
