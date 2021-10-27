@@ -56,9 +56,7 @@ function Navigation() {
 						onMouseEnter={() => setIsShown(true)}
 						onMouseLeave={() => setIsShown(false)}
 					>
-						<button className='relative  hover:bg-blue-400 font-bold'>
-							Why Arcadei
-						</button>
+						<button className='relative   font-bold'>Why Arcadei</button>
 					</div>
 					<div>
 						<button className='relative inline-block  font-bold '>
