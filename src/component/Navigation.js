@@ -10,10 +10,16 @@ function Navigation() {
 	const [isShown, setIsShown] = useState(false);
 	// const [isShown, setIsShown] = useState(false);
 	const [isShown1, setIsShown1] = useState(false);
+	const [sidemenu, setSidemenu] = useState(false);
 	const { ref, inView, entry } = useInView({
 		/* Optional options */
 		threshold: 0,
 	});
+	const sidemenuhandler = () => {
+		setSidemenu((sidemenu) => !sidemenu);
+		let sidem = sidemenu;
+		console.log(sidem);
+	};
 	const navbarhandler = () => {
 		if (window.scrollY >= 100) {
 			setnavbar(true);
@@ -28,12 +34,23 @@ function Navigation() {
 		<div
 			className={`fixed z-10  top-0 opacity-100 px-3 w-screen flex items-center justify-between  ${
 				navbar
-					? "bg-white h-12 duration-500 text-gray-900"
+					? "bg-yellow-700 h-12 duration-500 text-gray-900"
 					: "bg-mamba-100 h-20 duration-300 text-white"
 			} `}
 		>
 			<div className='flex space-x-3 '>
-				<div className='font-extrabold text-xl'>ARCADEI</div>
+				<div
+					className='font-extrabold text-xl '
+					style={{ textDecoration: "none" }}
+				>
+					<Link
+						to='/'
+						className={`${navbar ? "text-gray-900 " : "text-white "}`}
+						style={{ textDecoration: "none" }}
+					>
+						ARCADEI
+					</Link>
+				</div>
 				<div className=' space-x-6 hidden  lg:flex'>
 					<div
 						onMouseEnter={() => setIsShown(true)}
@@ -125,116 +142,15 @@ function Navigation() {
 						)}
 					</div>
 					<div>
-						<button
-							className='relative inline-block hover:bg-blue-400 font-bold '
-							onMouseEnter={() => setIsShown1(true)}
-							onMouseLeave={() => setIsShown1(false)}
-						>
-							Features
-						</button>
-
-						<div
-							className={`absolute z-30 bg-white  flex justify-around space-x-4    items-center text space-x-3 px-2   text-sm transition ease-in duration-300  `}
-							onMouseLeave={() => setIsShown1(false)}
-						>
-							<div
-								className={`flex flex-col  space-y-3 `}
+						<button className='relative inline-block  font-bold '>
+							<Link
+								to='/features'
+								className={`${navbar ? "text-black" : " text-white"}`}
 								style={{ textDecoration: "none" }}
-								onMouseEnter={() => setIsShown1(true)}
 							>
-								<Link
-									to=''
-									className={` hover:bg-gray-300 mt-4 ${
-										isShown1 ? "block" : "hidden"
-									}`}
-									style={{ textDecoration: "none" }}
-								>
-									undergraduates
-								</Link>
-								<Link
-									to=''
-									className={`hover:bg-gray-300 mt-4 ${
-										isShown1 ? "block" : "hidden"
-									}`}
-									style={{ textDecoration: "none" }}
-								>
-									Graduates & professionals
-								</Link>
-								<Link
-									to=''
-									className={`hover:bg-gray-300 mt-4 mb-4 ${
-										isShown1 ? "block" : "hidden"
-									}`}
-									style={{ textDecoration: "none" }}
-								>
-									Schools&colleges
-								</Link>
-							</div>
-							<div
-								className={`flex flex-col  space-y-3 `}
-								onMouseEnter={() => setIsShown1(true)}
-							>
-								<Link
-									to=''
-									className={`hover:bg-gray-300 mt-4 ${
-										isShown1 ? "block" : "hidden"
-									}`}
-									style={{ textDecoration: "none" }}
-								>
-									undergraduates
-								</Link>
-								<Link
-									to=''
-									className={`hover:bg-gray-300 mt-4 ${
-										isShown1 ? "block" : "hidden"
-									}`}
-									style={{ textDecoration: "none" }}
-								>
-									Graduates & professionals
-								</Link>
-								<Link
-									to=''
-									className={`hover:bg-gray-300 mt-4 mb-4 ${
-										isShown1 ? "block" : "hidden"
-									}`}
-									style={{ textDecoration: "none" }}
-								>
-									Schools&colleges
-								</Link>
-							</div>
-							<div
-								className={`flex flex-col  space-y-3`}
-								onMouseEnter={() => setIsShown1(true)}
-							>
-								<Link
-									to=''
-									className={`hover:bg-gray-300 mt-4 ${
-										isShown1 ? "block" : "hidden"
-									}`}
-									style={{ textDecoration: "none" }}
-								>
-									undergraduates
-								</Link>
-								<Link
-									to=''
-									className={`hover:bg-gray-300 mt-4 transition ease-in duration-700  ${
-										isShown1 ? "block" : "hidden"
-									}`}
-									style={{ textDecoration: "none" }}
-								>
-									Graduates & professionals
-								</Link>
-								<Link
-									to=''
-									className={`hover:bg-gray-300 mt-4 mb-4 transition ease-in duration-700  ${
-										isShown1 ? "block ease-in duration-700" : "hidden"
-									}`}
-									style={{ textDecoration: "none" }}
-								>
-									Schools&colleges
-								</Link>
-							</div>
-						</div>
+								Features
+							</Link>
+						</button>
 					</div>
 
 					<div className='cursor-pointer'>
@@ -257,15 +173,19 @@ function Navigation() {
 				<div>
 					<Link
 						style={{ textDecoration: "none" }}
-						className={`${navbar ? "text-black" : "text-white"} `}
+						className={`font-bold text-xl ${
+							navbar ? "text-black" : "text-white"
+						} `}
+						to='/team'
 					>
-						Support
+						Team
 					</Link>
 				</div>
 				<div>
 					<Link
 						style={{ textDecoration: "none" }}
 						className={`${navbar ? "text-black" : "text-white"} `}
+						to='/sales'
 					>
 						contact-sales
 					</Link>
@@ -273,9 +193,10 @@ function Navigation() {
 				<div>
 					<Link
 						style={{ textDecoration: "none" }}
-						className={`${navbar ? "text-black" : "text-white"} `}
+						className={` font-bold ${navbar ? "text-black" : "text-white"} `}
+						to='/login'
 					>
-						Sign in
+						Login
 					</Link>
 				</div>
 				<div>
@@ -283,12 +204,17 @@ function Navigation() {
 					<Link
 						style={{ textDecoration: "none" }}
 						className={`${navbar ? "text-black" : "text-white"} `}
+						to='signup'
 					>
 						Get started
 					</Link>
 				</div>
 			</div>
-			<div className='sm:flex lg:hidden cursor-pointer'>
+			<div
+				className='sm:flex lg:hidden cursor-pointer relative'
+				onClick={sidemenuhandler}
+				// sidemenu={this.state.sidemenu}
+			>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
 					class='h-6 w-6'
@@ -303,6 +229,52 @@ function Navigation() {
 						d='M4 6h16M4 12h16M4 18h16'
 					/>
 				</svg>
+				<div
+					className={`h-screen w-96 bg-black absolute top-8 -right-4 transform duration-500 flex justify-center ${
+						sidemenu ? "translate-x-0" : "translate-x-full"
+					}`}
+				>
+					<div
+						className='text-white flex flex-col space-y-4 text-xl py-10 w-3/4'
+						style={{ textDecoration: "none" }}
+					>
+						<Link
+							to='/'
+							style={{ textDecoration: "none" }}
+							className='text-white '
+						>
+							ARCADEI
+						</Link>
+						<Link
+							to='/team'
+							style={{ textDecoration: "none" }}
+							className='text-white '
+						>
+							Team
+						</Link>
+						<Link
+							to='/features'
+							style={{ textDecoration: "none" }}
+							className='text-white '
+						>
+							Features
+						</Link>
+						<Link
+							to='/login'
+							style={{ textDecoration: "none" }}
+							className='text-white '
+						>
+							Login
+						</Link>
+						<Link
+							to='/'
+							style={{ textDecoration: "none" }}
+							className='text-white '
+						>
+							Sales
+						</Link>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

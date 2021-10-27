@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 // import  from "react";
 import React, { useState } from "react";
+// eslint-disable-next-line no-unused-vars
 import { Navbar, Carousel } from "react-bootstrap";
 import Navigation from "./Navigation";
 import { useInView, ref, entry } from "react-intersection-observer";

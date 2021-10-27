@@ -5,19 +5,23 @@ module.exports = {
 		extend: {
 			height: {
 				small1: "600px",
-				small2: "400px",
+				small2: "500px",
+				small3: "400px",
 				big: "800px",
 				bigx: "1000px",
 				bigxx: "1200px",
 				bigxxx: "1200px",
+				bigmax: "2000px",
 			},
 			width: {
 				small1: "600px",
-				small2: "400px",
+				small2: "500px",
+				small3: "400px",
 				big: "800px",
 				bigx: "1000px",
 				bigxx: "1200px",
 				bigxxx: "1200px",
+				bigmax: "2000px",
 			},
 			colors: {
 				mamba: {
@@ -47,6 +51,9 @@ module.exports = {
 					700: "#5F742F",
 					800: "#404D20",
 				},
+				algo: {
+					100: "#F6F9FC",
+				},
 			},
 			screens: {
 				xs: "300px",
@@ -56,5 +63,5 @@ module.exports = {
 	variants: {
 		extend: {},
 	},
-	plugins: [],
+	plugins: [require("@tailwindcss/forms")],
 };

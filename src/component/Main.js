@@ -12,19 +12,27 @@ import Reactnode from "../componentsvg/reactnode";
 import { Imagesdata } from "../Data/imagesdata";
 import Navigation from "./Navigation";
 import Img from "../Data/sampic.jpg";
+import { Link } from "react-router-dom";
 
 // import "glider-js/glider.min.css";
 // import Glider from "react-glider/glider.defaults.css";
 
-function Main({ isVisible }) {
+function Main({ props }) {
 	const [index, setIndex] = useState(0);
 
 	const handleSelect = (selectedIndex, e) => {
 		setIndex(selectedIndex);
 	};
+
 	return (
 		<div>
-			<Navigation className='bg-blue-600' />
+			<div className='relative'>
+				<Navigation
+					className='bg-blue-600'
+					// sidemenu={this.props.sidemenu}
+				></Navigation>
+			</div>
+
 			{/* <Carouselcam className='h-96 ' /> */}
 			<div className=' w-screen bg-mamba-100 grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2 auto-cols-max '>
 				<div className=' h-bigxx w-full  bg-mamba-100 col-span-1 flex justify-center items-center '>
@@ -38,7 +46,14 @@ function Main({ isVisible }) {
 						<button
 							className={`w-40 h-12 rounded-2xl   flex items-center justify-center space-x-6 border-4 border-blue-500 transition duration-700 hover:bg-white hover:text-gray-800`}
 						>
-							Get Started
+							<Link
+								to='/signup'
+								style={{ textDecoration: "none" }}
+								className='text-white hover:text-black '
+							>
+								<div className=' hover:text-black '>Get Started</div>
+							</Link>
+
 							<svg
 								xmlns='http://www.w3.org/2000/svg'
 								class='h-6 w-6'
@@ -82,13 +97,16 @@ function Main({ isVisible }) {
 			<div className='w-screen grid grid-cols-5'>
 				<div className='flex items-center justify-center  font-light col-span-3 col-start-2'>
 					<div className=' grid  grid-cols-1  gap-10 place-self-center  sm:grid-cols-2 lg:grid-cols-3 py-36  bg-white'>
-						<div className='  bg-white flex flex-col col-span-1    px-7  place-self-end      transform duration-300 hover:shadow-2xl'>
+						<div className='  bg-white flex flex-col col-span-1    px-7  place-self-end      transform duration-300 shadow-xl hover:shadow-2xl cursor-pointer'>
 							<div className='w-full flex flex-col items-center'>
 								<Flut />
 							</div>
-							<h6 className='text-red-500 font-extrabold text-2xl'> React</h6>
+							<h6 className='text-red-500 font-extrabold text-2xl w-full text-center'>
+								{" "}
+								React
+							</h6>
 
-							<p className='text-center'>
+							<p className=''>
 								React makes it painless to create interactive UIs. Design simple
 								views for each state in your application, and React will
 								efficiently update and render just the right components when
@@ -97,11 +115,11 @@ function Main({ isVisible }) {
 							</p>
 						</div>
 
-						<div className='bg-white flex flex-col    px-4  place-self-center  transform duration-300 hover:shadow-2xl'>
+						<div className='bg-white flex flex-col    px-4  place-self-center  transform duration-300 shadow-xl hover:shadow-2xl '>
 							<div className='w-full flex flex-col items-center'>
 								<Reactnode />
 							</div>
-							<h6 className='text-greener-600 font-extrabold text-2xl'>
+							<h6 className='text-greener-600 font-extrabold text-2xl w-full text-center'>
 								{" "}
 								Mongo DB
 							</h6>
@@ -115,13 +133,13 @@ function Main({ isVisible }) {
 							</p>
 						</div>
 
-						<div className='bg-white flex flex-col   px-7  place-self-start    transform duration-300 hover:shadow-2xl '>
+						<div className='bg-white flex flex-col   px-7  place-self-start    transform duration-300 shadow-xl hover:shadow-2xl  '>
 							<div className='w-full flex flex-col items-center'>
 								<Andriod />
 							</div>
-							<h6 className='text-blue-500 font-extrabold text-2xl'>
+							<h6 className='text-blue-500 font-extrabold text-2xl w-full text-center'>
 								{" "}
-								Flutter
+								Next js
 							</h6>
 
 							<p className='text-center'>
@@ -132,13 +150,13 @@ function Main({ isVisible }) {
 								predictable and easier to debug.
 							</p>
 						</div>
-						<div className='bg-white flex flex-col   px-7  place-self-center    transform duration-300 hover:shadow-2xl '>
+						<div className='bg-white flex flex-col   px-7  place-self-center    transform duration-300 shadow-xl hover:shadow-2xl  '>
 							<div className='w-full flex flex-col items-center'>
 								<Andriod />
 							</div>
-							<h6 className='text-blue-500 font-extrabold text-2xl'>
+							<h6 className='text-blue-500 font-extrabold text-2xl  w-full text-center'>
 								{" "}
-								Flutter
+								Express
 							</h6>
 
 							<p className='text-center'>
@@ -149,13 +167,13 @@ function Main({ isVisible }) {
 								predictable and easier to debug.
 							</p>
 						</div>
-						<div className='bg-white flex flex-col   px-7  place-self-center     transform duration-300 hover:shadow-2xl '>
+						<div className='bg-white flex flex-col   px-7  place-self-center     transform duration-300 shadow-xl hover:shadow-2xl '>
 							<div className='w-full flex flex-col items-center'>
 								<Andriod />
 							</div>
-							<h6 className='text-blue-500 font-extrabold text-2xl'>
+							<h6 className='text-blue-500 font-extrabold text-2xl w-full text-center'>
 								{" "}
-								Flutter
+								SQL
 							</h6>
 
 							<p className='text-center'>
@@ -166,11 +184,11 @@ function Main({ isVisible }) {
 								predictable and easier .
 							</p>
 						</div>
-						<div className='bg-white flex flex-col   px-7  place-self-center    transform duration-300 hover:shadow-2xl '>
+						<div className='bg-white flex flex-col   px-7  place-self-center    transform duration-300 shadow-xl hover:shadow-2xl '>
 							<div className='w-full flex flex-col items-center'>
 								<Andriod />
 							</div>
-							<h6 className='text-blue-500 font-extrabold text-2xl'>
+							<h6 className='text-blue-500 font-extrabold text-2xl w-full text-center'>
 								{" "}
 								Flutter
 							</h6>

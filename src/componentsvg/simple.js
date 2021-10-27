@@ -1,3 +1,4 @@
+/* eslint-disable react/style-prop-object */
 import React from "react";
 
 function simple() {
@@ -9,6 +10,7 @@ function simple() {
 				width='550'
 				height='550'
 				preserveAspectRatio='xMidYMid meet'
+				// eslint-disable-next-line react/style-prop-object
 				style='width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px);'
 			>
 				<defs>

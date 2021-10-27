@@ -1,7 +1,7 @@
 import React from "react";
 
 function Sales() {
-	return <div></div>;
+	return <div className='flex justify-center'>jdjdj</div>;
 }
 
 export default Sales;
